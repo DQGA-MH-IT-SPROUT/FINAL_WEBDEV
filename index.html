@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5d834">
+    <meta name="description" content="NotStolen — đồ công nghệ cũ, thông tin tình trạng và người bán minh bạch.">
+    <title>NotStolen — Mua bán đồ công nghệ cũ minh bạch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/products.js" defer></script>
+    <script src="JS/images.js" defer></script>
+    <script src="JS/app.js" defer></script>
+  </head>
+  <body>
+    <div class="service-bar">
+      <div class="service-bar-inner">
+        <span data-i18n="serviceBar">Đồ cũ · Từng món có mô tả riêng · Người đăng minh bạch</span>
+        <a href="#why-us" data-i18n="navPromise">Cam kết của chúng tôi</a>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="header-main">
+        <a class="brand" href="#" aria-label="NotStolen — Trang chủ" data-i18n-aria-label="homeLabel">
+          <span class="brand-mark" aria-hidden="true">NS</span>
+          <span class="brand-name">NotStolen<span class="brand-period">.</span></span>
+        </a>
+        <label class="search-box" for="searchInput">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+          <input id="searchInput" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="Tìm điện thoại, laptop, tai nghe...">
+          <kbd data-i18n="searchShortcut">Ctrl K</kbd>
+        </label>
+        <div class="header-actions">
+          <button class="header-link" id="accountButton" type="button" aria-label="Tài khoản"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.5-3.4 3-5.2 7-5.2s6.5 1.8 7 5.2"/></svg><span data-i18n="signIn">Đăng nhập</span></button>
+          <button class="header-link" id="manageButton" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 17h4"/></svg><span data-i18n="myListings">Quản lý</span></button>
+          <button class="header-link favorites-filter" id="favoritesFilter" type="button" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 4.5-8.8 10-8.8 10s-8.8-5.5-8.8-10a4.5 4.5 0 0 1 8.8-1.6 4.5 4.5 0 0 1 8.8 1.6Z"/></svg>
+            <span data-i18n="favorites">Yêu thích</span>
+          </button>
+          <button class="icon-button language-toggle" id="languageToggle" type="button" aria-label="Switch to English" data-i18n-aria-label="languageLabel">EN</button>
+          <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Bật giao diện tối" data-i18n-aria-label="themeDark">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.1A8.4 8.4 0 0 1 8.9 3.8 8.5 8.5 0 1 0 20.2 15.1Z"/></svg>
+          </button>
+          <button class="cart-button" id="openCart" type="button" aria-label="Mở giỏ hàng" data-i18n-aria-label="cart">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L21 8H6"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg>
+            <span data-i18n="cart">Giỏ hàng</span>
+            <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+          </button>
+        </div>
+      </div>
+      <nav class="category-nav" aria-label="Danh mục sản phẩm" data-i18n-aria-label="categoryNavigation">
+        <div class="category-nav-inner">
+          <span class="browse-label" data-i18n="browseCategories">Danh mục</span>
+          <div class="category-list" id="categoryList"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="shop-intro">
+        <div class="shop-intro-copy">
+          <span class="intro-kicker"><span class="live-dot"></span><span data-i18n="heroEyebrow">MUA ĐỒ ĐÃ KIỂM ĐỊNH · DÙNG TỐT MỖI NGÀY</span></span>
+          <h1 data-i18n="shopBanner">Đồ tốt, giá thật.<br><span>Dùng thêm một vòng đời.</span></h1>
+          <p data-i18n="shopBannerText">Mỗi món đều được kiểm tra và mô tả đúng tình trạng trước khi lên kệ.</p>
+        </div>
+        <div class="intro-proof">
+          <div class="proof-stamp">NS<span>✓</span></div>
+          <div><strong data-i18n="introProofTitle">Mỗi tin đăng là một món đồ riêng</strong><small data-i18n="introProofText">Ảnh thật · ghi rõ khuyết điểm · đánh giá người đăng</small></div>
+          <span class="proof-arrow" aria-hidden="true">↗</span>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalog" aria-labelledby="catalogTitle">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker" data-i18n="catalogKicker">ĐƯỢC CHỌN LỌC CHO BẠN</span>
+            <h2 id="catalogTitle" data-i18n="catalogTitle">Tìm món đồ tiếp theo</h2>
+          </div>
+          <p class="catalog-assurance"><span>✓</span><span data-i18n="catalogAssurance">Tình trạng minh bạch, giá so sánh rõ ràng</span></p>
+        </div>
+
+        <div class="catalog-layout">
+          <aside class="filter-panel" aria-label="Bộ lọc sản phẩm" data-i18n-aria-label="productFilters">
+            <div class="filter-heading"><h3 data-i18n="filters">Lọc sản phẩm</h3><button type="button" id="resetFilters" data-i18n="reset">Xóa lọc</button></div>
+            <div class="filter-group">
+              <label for="priceFilter" data-i18n="maxPrice">Mức giá tối đa</label>
+              <select id="priceFilter">
+                <option value="50000000" data-i18n="anyPrice">Tất cả mức giá</option>
+                <option value="5000000" data-i18n="under5m">Dưới 5 triệu</option>
+                <option value="10000000" data-i18n="under10m">Dưới 10 triệu</option>
+                <option value="20000000" data-i18n="under20m">Dưới 20 triệu</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="conditionFilter" data-i18n="condition">Tình trạng</label>
+              <select id="conditionFilter">
+                <option value="all" data-i18n="allConditions">Tất cả tình trạng</option>
+                <option value="A" data-i18n="conditionA">A — Như mới</option>
+                <option value="B" data-i18n="conditionB">B — Rất tốt</option>
+                <option value="C" data-i18n="conditionC">C — Tốt</option>
+              </select>
+            </div>
+            <div class="filter-note"><span>✓</span><p data-i18n="filterTip">Mỗi món đồ đều có mô tả tình trạng thật.</p></div>
+          </aside>
+
+          <div class="product-area">
+            <div class="product-toolbar">
+              <div><h2 class="results-heading" data-i18n="resultHeading">Mặt hàng đang có</h2><p id="resultCount" aria-live="polite"></p></div>
+              <label class="sort-control"><span data-i18n="sortBy">Sắp xếp:</span>
+                <select id="sortFilter" aria-label="Sắp xếp sản phẩm" data-i18n-aria-label="sortLabel">
+                  <option value="featured" data-i18n="sortFeatured">Nổi bật</option>
+                  <option value="price-low" data-i18n="sortPriceLow">Giá thấp đến cao</option>
+                  <option value="price-high" data-i18n="sortPriceHigh">Giá cao đến thấp</option>
+                  <option value="name" data-i18n="sortName">Tên A–Z</option>
+                </select>
+              </label>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+            <div class="empty-state" id="emptyState" hidden>
+              <span aria-hidden="true">⌕</span>
+              <h3 data-i18n="emptyTitle">Chưa tìm thấy sản phẩm phù hợp</h3>
+              <p data-i18n="emptyText">Thử đổi từ khóa hoặc nới lỏng bộ lọc nhé.</p>
+              <button type="button" class="text-button" id="emptyReset" data-i18n="resetAll">Xóa tất cả bộ lọc</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="promise-section" id="why-us" aria-label="Cam kết của NotStolen" data-i18n-aria-label="promiseLabel">
+        <div class="promise-heading"><span class="promise-check">✓</span><div><strong data-i18n="promiseShortTitle">Mua đồ cũ với đủ thông tin để tự tin chọn.</strong><p data-i18n="promiseShortText">Xem ảnh người đăng cung cấp, khuyết điểm cụ thể và đánh giá người đăng.</p></div></div>
+        <div class="promise-points"><span><b>01</b><span data-i18n="promisePoint1">Một tin cho từng món đồ thật</span></span><span><b>02</b><span data-i18n="promisePoint2">Khuyết điểm được nêu rõ</span></span><span><b>03</b><span data-i18n="promisePoint3">Báo cáo tin đáng ngờ</span></span></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#"><span class="brand-mark">NS</span><span class="brand-name">NotStolen<span class="brand-period">.</span></span></a>
+      <p data-i18n="footerLine">Đồ tốt được dùng lâu hơn. Cảm ơn bạn đã chọn mua có ý thức.</p>
+      <span>© 2026 NotStolen <span data-i18n="demoLabel">· Bản trình diễn học tập</span></span>
+    </footer>
+
+    <dialog class="detail-dialog" id="detailDialog" aria-labelledby="detailTitle">
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Đóng" data-i18n-aria-label="close">×</button>
+      <div id="detailContent"></div>
+    </dialog>
+
+    <dialog class="cart-dialog" id="cartDialog" aria-labelledby="cartTitle">
+      <div class="cart-dialog-header"><div><span class="section-kicker" data-i18n="yourBag">GIỎ HÀNG CỦA BẠN</span><h2 id="cartTitle" data-i18n="cart">Giỏ hàng</h2></div><button class="dialog-close" type="button" data-close-dialog aria-label="Đóng" data-i18n-aria-label="close">×</button></div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-summary" id="cartSummary"></div>
+      <button class="primary-button checkout-button" id="startCheckout" type="button"><span data-i18n="checkout">Tiếp tục đặt hàng</span><span aria-hidden="true">→</span></button>
+      <p class="demo-disclaimer" data-i18n="demoDisclaimer">Bản trình diễn: không thu thập thông tin thanh toán, không tạo đơn hàng thật.</p>
+    </dialog>
+
+    <dialog class="checkout-dialog" id="checkoutDialog" aria-labelledby="checkoutTitle">
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Đóng" data-i18n-aria-label="close">×</button>
+      <div id="checkoutContent"></div>
+    </dialog>
+
+    <dialog class="workflow-dialog" id="workflowDialog" aria-labelledby="workflowTitle">
+      <div class="workflow-header"><div><span class="section-kicker" id="workflowKicker"></span><h2 id="workflowTitle"></h2></div><button class="dialog-close" type="button" data-close-dialog aria-label="Đóng" data-i18n-aria-label="close">×</button></div>
+      <div class="workflow-content" id="workflowContent"></div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
